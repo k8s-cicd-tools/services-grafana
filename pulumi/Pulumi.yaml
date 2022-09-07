@@ -1,0 +1,3 @@
+name: services-grafana
+runtime: nodejs
+description: is an open source tool for analysis and visualization of metrics.
