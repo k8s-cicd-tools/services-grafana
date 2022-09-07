@@ -27,7 +27,6 @@ pipeline {
                     withEnv(["PATH+PULUMI=$HOME/.pulumi/bin"]) {
                         sh "cd pulumi && npm install"
                         sh "cd pulumi; pulumi stack select dev"
-                        sh "cd pulumi; pulumi config set delivery 'elastic'"
                         sh "cd pulumi; pulumi up --yes"
                     }
                 }
