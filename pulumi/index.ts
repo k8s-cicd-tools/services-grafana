@@ -80,7 +80,7 @@ const grafana = new k8s.apps.v1.Deployment("grafana", {
             },
         },
     },
-});
+}, { dependsOn: configMap });
 
 
 // Create a Service
@@ -104,7 +104,7 @@ const grafanaService = new k8s.core.v1.Service("grafana", {
         ],
         selector: appLabels,
     },
-});
+}, { dependsOn: grafana });
 
 
 export const name =  grafana.metadata.name;
